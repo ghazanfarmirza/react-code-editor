@@ -28,6 +28,7 @@ const Landing = () => {
       }
     }
   };
+
   const handleCompile = () => {
     setProcessing(true);
     const formData = {
@@ -48,7 +49,6 @@ const Landing = () => {
       },
       data: formData,
     };
-
     axios
       .request(options)
       .then(function (response) {
