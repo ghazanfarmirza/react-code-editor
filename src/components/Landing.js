@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import CodeEditorWindow from "./CodeEditorWindow";
 import axios from "axios";
 import { classnames } from "../utils/general";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import OutputWindow from "./OutputWindow";
 import CustomInput from "./CustomInput";
 import OutputDetails from "./OutputDetails";
@@ -65,10 +63,6 @@ const Landing = () => {
         console.log("status", status);
         if (status === 429) {
           console.log("too many requests", status);
-          showErrorToast(
-            `Quota of 100 requests exceeded for the Day! Please try again tomorrow.`,
-            10000
-          );
         }
         setProcessing(false);
         console.log("catch block...", error);
@@ -88,10 +82,7 @@ const Landing = () => {
     try {
       let response = await axios.request(options);
       let statusId = response.data.status?.id;
-
-      // Processed - we have a result
       if (statusId === 1 || statusId === 2) {
-        // still processing
         setTimeout(() => {
           checkStatus(token);
         }, 2000);
@@ -99,54 +90,17 @@ const Landing = () => {
       } else {
         setProcessing(false);
         setOutputDetails(response.data);
-        showSuccessToast(`Compiled Successfully!`);
         console.log("response.data", response.data);
         return;
       }
     } catch (err) {
       console.log("err", err);
       setProcessing(false);
-      showErrorToast();
     }
-  };
-
-  const showSuccessToast = (msg) => {
-    toast.success(msg || `Compiled Successfully!`, {
-      position: "top-right",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  };
-  const showErrorToast = (msg, timer) => {
-    toast.error(msg || `Something went wrong! Please try again.`, {
-      position: "top-right",
-      autoClose: timer ? timer : 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
   };
 
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={2000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-
       <div className="flex flex-row">
       </div>
       <div className="flex flex-row space-x-4 items-start px-4 py-4">
