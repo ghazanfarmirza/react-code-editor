@@ -101,8 +101,7 @@ const Landing = () => {
 
   return (
     <>
-      <div className="flex flex-row"></div>
-      <div className="flex flex-row space-x-4 items-start px-4 py-4 items-center">
+      <div className="flex flex-row space-x-4 items-center content-center justify-center flex-wrap p-14">
         <div className="flex flex-col w-full h-full justify-start items-center basis-1/2 flex-1 border-8 border-black">
           <CodeEditorWindow
             code={code}
