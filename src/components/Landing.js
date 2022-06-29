@@ -6,10 +6,7 @@ import OutputWindow from "./OutputWindow";
 import CustomInput from "./CustomInput";
 import OutputDetails from "./OutputDetails";
 
-const javascriptDefault = `/**
-* Problem: Binary Search: problem statement::.
-*/
-`;
+const javascriptDefault = `/** Problem: xyz: problem statement.**/`;
 
 const Landing = () => {
   const [code, setCode] = useState(javascriptDefault);
@@ -101,8 +98,8 @@ const Landing = () => {
 
   return (
     <>
-      <div className="flex flex-row space-x-4 items-center content-center justify-center flex-wrap p-14">
-        <div className="flex flex-col w-full h-full justify-start items-center basis-1/2 flex-1 border-8 border-black">
+      <div className="flex flex-row space-x-4 items-center flex-wrap p-14">
+        <div className="flex flex-col items-center basis-1/2 flex-1 border-8 border-black">
           <CodeEditorWindow
             code={code}
             onChange={onChange}
