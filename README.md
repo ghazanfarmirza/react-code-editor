@@ -2,7 +2,8 @@
 
 ### Step 1:
 
-git clone [git@github.com:ghazanfarmirza/react-code-editor.git]
+git clone 
+[git@github.com:ghazanfarmirza/react-code-editor.git]
 
 ### Step 2:
 
