@@ -22,6 +22,10 @@ Register on [RapidApi](https://rapidapi.com/judge0-official/api/judge0-ce/pricin
 
 Create your own .env and put the api keys respectively
 
+REACT_APP_RAPID_API_URL = https://judge0-ce.p.rapidapi.com/submissions
+REACT_APP_RAPID_API_HOST = judge0-ce.p.rapidapi.com
+REACT_APP_RAPID_API_KEY = xyz
+
 ### Step 6:
 
 npm start to run the project
