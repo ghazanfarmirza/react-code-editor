@@ -30,4 +30,4 @@ REACT_APP_RAPID_API_KEY = xyz
 
 ### Step 6:
 
-npm start to run the project
+run npm start to run the project
