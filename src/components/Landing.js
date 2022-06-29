@@ -103,8 +103,8 @@ const Landing = () => {
     <>
       <div className="flex flex-row">
       </div>
-      <div className="flex flex-row space-x-4 items-start px-4 py-4">
-        <div className="flex flex-col w-full h-full justify-start items-end">
+      <div className="flex flex-row space-x-4 items-start px-4 py-4 items-center">
+        <div className="flex flex-col w-full h-full justify-start items-center basis-1/2 flex-1 border-8 border-black">
           <CodeEditorWindow
             code={code}
             onChange={onChange}
@@ -112,9 +112,9 @@ const Landing = () => {
           />
         </div>
 
-        <div className="right-container flex flex-shrink-0 w-[30%] flex-col">
+        <div className="right-container flex flex-shrink-0 w-[30%] flex-col basis-1/4 flex-1">
           <OutputWindow outputDetails={outputDetails} />
-          <div className="flex flex-col items-end">
+          <div className="flex flex-col items-center">
             <CustomInput
               customInput={customInput}
               setCustomInput={setCustomInput}
@@ -123,7 +123,7 @@ const Landing = () => {
               onClick={handleCompile}
               disabled={!code}
               className={classnames(
-                "mt-4 border-2 border-black z-10 rounded-md",
+                "mt-4 border-2 border-black z-10 rounded-md items-center w-full px-4 py-2 transition bg-green-500 hover:bg-green-700 hover:text-white",
                 !code ? "opacity-50" : ""
               )}
             >

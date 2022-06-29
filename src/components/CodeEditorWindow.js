@@ -21,7 +21,7 @@ const CodeEditorWindow = ({ onChange, code }) => {
         name="ace-editor"
         editorProps={{ $blockScrolling: true }}
         height='600px'
-        width='700px'
+        width='auto'
         value={value}
         fontSize={18}
       />
