@@ -2,9 +2,7 @@
 
 ### Step 1:
 
-git clone 
-
-[git@github.com:ghazanfarmirza/react-code-editor.git]
+git clone (git@github.com:ghazanfarmirza/react-code-editor.git)
 
 ### Step 2:
 
@@ -20,7 +18,7 @@ npm install
 
 Register on RapidAPI and get your own API keys
 
-[https://rapidapi.com/judge0-official/api/judge0-ce/pricing]
+[RapidApi](https://rapidapi.com/judge0-official/api/judge0-ce/pricing)
 
 ### Step 5:
 
