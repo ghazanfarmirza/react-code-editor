@@ -16,7 +16,9 @@ const Landing = () => {
   const [outputDetails, setOutputDetails] = useState(null);
   const [processing, setProcessing] = useState(null);
   const [markdownProblem, setMarkdownProblem] = useState("");
+ 
   const markdown = `
+  #### Problem
   **Sample Code**
 
   # code block
@@ -44,9 +46,8 @@ const Landing = () => {
   `;
 
   useEffect(() => {
-    axios.get("http://localhost:1337/api/problems").then((response) => {
-      console.log(response.data.data[0].attributes.CodingProblem);
-      setMarkdownProblem(response.data.data[0].attributes.CodingProblem);
+    axios.get(`${process.env.REACT_APP_API_STRAPI_BASE_URL}/api/problems/1`).then((response) => {
+      setMarkdownProblem(response.data.data.attributes.CodingProblem);
       console.log(response);
     });
   }, []);
